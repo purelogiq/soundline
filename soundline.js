@@ -54,7 +54,7 @@ var SoundLine = new function(){
         }
       }
       loading = false;
-      func(result);
+      func(shuffle(result));
     });
   };
 
