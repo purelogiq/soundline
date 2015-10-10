@@ -11,9 +11,11 @@ Unfortunately, SoundCloud does not officially support a related tracks listing i
 
 ![SoundLine relatedreq](https://raw.githubusercontent.com/purelogiq/soundline/master/relatedreq.PNG)
 
-When you load a track on SoundCloud's main website, a request to https://api-v2.soundcloud.com/tracks/{{trackid}}/related is send and JSON with a listing of related tracks is returned. Unfortunately, if you try to request the same json from a client side webpage loaded from localhost or your personal server, you will encounter a cross site request error as modern browsers are configured to prevent such request for security reasons.
+When you load a track on SoundCloud's main website, a request to https://api-v2.soundcloud.com/tracks/{{trackid}}/related is send and JSON with a listing of related tracks is returned. Unfortunately, if you try to request the same json from a client side webpage loaded from localhost or your personal server, you will encounter a cross site request error as modern browsers are configured to prevent such requests for security reasons.
 
-Lukily I was able to get around this by adding an additional route to a nodejs server script that I had from class (credit Joe Mertz joemertz@andrew.cmu.edu). This route accepts api https urls at /crossrequest?theurl=, does request on the server side and returns back the json to the client. In addition I added response headers to that route so that my own server will allow cross site requests.
+Lukily I was able to get around this by adding an additional route to a nodejs server script that I had from class (credit Joe Mertz joemertz@andrew.cmu.edu). This route accepts api https urls at /crossrequest?theurl=, does the request on the server side and returns back the json to the client. In addition, I added response headers to that route so that the server itself will allow cross site requests.
+
+For anyone else interested in doing this, I advise you wait till SoundCloud releases it publically in their api so that we do not cause any disruption to their server load :3
 
 ### Result
 Here is how it looks.
