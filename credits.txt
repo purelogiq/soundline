@@ -1,0 +1,5 @@
+http://stackoverflow.com/questions/6677035/jquery-scroll-to-element
+http://stackoverflow.com/questions/26388089/retrieving-the-recommended-playlist-via-api-call/26390142#26390142
+http://stackoverflow.com/questions/11826384/calling-a-json-api-with-node-js
+http://jonathanmh.com/how-to-enable-cors-in-express-js-node-js/
+http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array-in-javascript

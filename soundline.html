@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soundline - A Soundcloud Adventure</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+  <link rel="stylesheet" href="soundline.css">
+  <script src="http://connect.soundcloud.com/sdk-2.0.0.js"></script>
+  <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+  <script src="soundline.js"></script>
+</head>
+<body>
+<main>
+  <div class="row z-depth-1 left selection-div">
+    <div class="col s8 offset-s2">
+      <img src="soundline_logo.png" width="100%"/>
+      <p class="subtitle">SoundLine is a SoundCloud adventure. Type a song name, tag, artist, or category of song, and click start to begin! Keep clicking on the songs that you like to find even more related songs! (You can always go back and change your selection, or even start a new search!).</p>
+      <div class="row">
+        <div class="col s8">
+          <input id="searchQuery" type="text" placeholder="e.g. Genre or Artist Name or a tag..." />
+        </div>
+        <div class="col s4">
+          <a class="waves-effect waves-light btn orange darken-2" onclick="SoundLine.startSearch()">Start!</a>
+        </div>
+      </div>
+    </div>
+    <div id="theline">
+    </div>
+  </div>
+  <div class="player-div" >
+    <iframe id="sc-widget" class="sc-player-frame" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1848538&show_artwork=true&visual=true&auto_play=false"></iframe>
+  </div>
+</main>
+<br style="clear: both" />
+<footer class="page-footer orange darken-2">
+  <div class="container valign-wrapper">
+    <p class="white-text valign center-p" >Made by imadueme@andrew.cmu.edu for CMU 67-328</p>
+  </div>
+</footer>
+<script>
+  $(document).ready(function(){
+    $('.player-div').pushpin({ top: $('.player-div').offset().top });
+    var widgetIframe = document.getElementById('sc-widget');
+    var widget = SC.Widget(widgetIframe);
+    widget.pause();
+  });
+</script>
+</body>
+</html>
