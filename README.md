@@ -9,7 +9,7 @@ It works by getting the "Related Tracks" section of a SoundCloud track and blowi
 ### Cross Site Requests
 Unfortunately, SoundCloud does not officially support a related tracks listing in their API (until v2 releases, see credits.txt) and so I had to have a few sneaky workarounds...
 
-![SoundLine relatedreq](https://raw.githubusercontent.com/purelogiq/soundline/master/relatedreq.png)
+![SoundLine relatedreq](https://raw.githubusercontent.com/purelogiq/soundline/master/relatedreq.PNG)
 
 When you load a track on SoundCloud's main website, a request to https://api-v2.soundcloud.com/tracks/{{trackid}}/related is send and JSON with a listing of related tracks is returned. Unfortunately, if you try to request the same json from a client side webpage loaded from localhost or your personal server, you will encounter a cross site request error as modern browsers are configured to prevent such request for security reasons.
 
